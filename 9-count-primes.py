@@ -1,5 +1,5 @@
 # Brute Force method
-'''
+"""
 def count_primes(n):
     primes = []
 
@@ -23,9 +23,26 @@ def count_primes(n):
         if is_prime:
             primes.append(i)
     print(len(primes), ",", primes)
-'''
+"""
 
-# 
+
+# Sieve of Eratosthenes
+def count_primes(n):
+
+    # Initialize an array of booleans of size n+1 set to True
+    is_prime = [True] * (n + 1)
+    primes = []
+
+    for i in range(2, n + 1):
+
+        # if i is prime
+        if is_prime[i]:
+            primes.append(i)
+            # Mark all multiples of i greater than i*i as not prime
+            for j in range(i * i, n + 1, i):
+                is_prime[j] = False
+    print(len(primes))
+
 
 # Examples:
 count_primes(10)  # 4
