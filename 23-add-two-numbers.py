@@ -21,3 +21,8 @@ def add_two_numbers():
         l1 = l1.next if l1 is not None else None
         l2 = l2.next if l2 is not None else None
     return result.next
+
+# Examples:
+# add_two_numbers([2, 4, 3], [5, 6, 4])  # [7, 0, 8]
+# add_two_numbers([0], [0])  # [0]
+# add_two_numbers([9, 9, 9, 9, 9, 9, 9], [9, 9, 9, 9])  # [8, 9, 9, 9, 0, 0, 0, 1]
