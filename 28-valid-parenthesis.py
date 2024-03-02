@@ -7,13 +7,13 @@ def isValid(s):
 
         # If the character is a closing bracket, we pop the last element from the stack and check if it matches the corresponding opening bracket
         elif char == ")":
-            if stack.pop() != "(":
+            if not stack or stack.pop() != "(":
                 return False
         elif char == "}":
-            if stack.pop() != "{":
+            if not stack or stack.pop() != "{":
                 return False
         elif char == "]":
-            if stack.pop() != "[":
+            if not stack or stack.pop() != "[":
                 return False
     if not stack:
         return True
