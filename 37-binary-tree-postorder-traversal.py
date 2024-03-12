@@ -6,15 +6,15 @@
 #         self.right = right
 
 
-def preorder_traversal(root):
+def postorder_traversal(root):
     path = []
     def explore_node(node):
         if node is None:
             return
         else:
-            path.append(node.val)
             explore_node(node.left)
             explore_node(node.right)
+            path.append(node.val)
 
     explore_node(root)    
     return path
